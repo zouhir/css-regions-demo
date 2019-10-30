@@ -1,3 +1,6 @@
+/**
+** DEMO & PAGE SETUP
+**/
 * {
   box-sizing: border-box;
 }
@@ -19,7 +22,6 @@ nav {
   display: flex;
   flex-direction: column;
 }
-
 page {
   background: white;
   display: flex;
@@ -33,13 +35,6 @@ page {
 page[size="A4"] {
   width: 21cm;
   height: 29.7cm;
-}
-
-.region {
-  flex-grow: 1;
-  overflow: hidden;
-  flow-from: page-content;
-  font-size: 12px;
 }
 
 header {
@@ -58,16 +53,22 @@ footer {
   color: #ccc;
   padding: 20px;
 }
+/**
+** // END: DEMO & PAGE SETUP
+**/
 
-@media print {
-  body,
-  page {
-    margin: 0;
-    box-shadow: 0;
-  }
-}
 
+/**
+** CSS REGIONS STUFF
+**/
 #content {
   flow-into: page-content content;
   display: none;
+}
+
+.region {
+  flex-grow: 1;
+  overflow: hidden;
+  flow-from: page-content;
+  font-size: 12px;
 }
